@@ -1,0 +1,38 @@
+@model NorthPoleGiftSystem.Models.WorkshopModel.WorkshopDetail
+
+@{
+    ViewData["Title"] = "Workshop Details";
+}
+
+<h1>Workshop Details</h1>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Location
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Location
+        </dd>
+
+        <dt class="col-sm-2">
+            Workshop Capacity
+        </dt>
+        <dd class="col-sm-10">
+            @Model.WorkshopCapacity
+        </dd>
+
+        <dt class="col-sm-2">
+            Supervisor ID
+        </dt>
+        <dd class="col-sm-10">
+            @Model.SupervisorID
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WorkshopID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

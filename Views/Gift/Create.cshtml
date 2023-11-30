@@ -1,0 +1,33 @@
+@model NorthPoleGiftSystem.Models.Gift.GiftCreate
+
+<h2>Create a New Gift</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="GiftName" class="control-label">Gift Name:</label>
+        <input asp-for="GiftName" class="form-control" />
+        <span asp-validation-for="GiftName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GiftDescription" class="control-label">Gift Description:</label>
+        <textarea asp-for="GiftDescription" class="form-control"></textarea>
+        <span asp-validation-for="GiftDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WorkshopID" class="control-label">Workshop ID:</label>
+        <input asp-for="WorkshopID" class="form-control" />
+        <span asp-validation-for="WorkshopID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductionStatus" class="control-label">Production Status:</label>
+        <input asp-for="ProductionStatus" class="form-control" />
+        <span asp-validation-for="ProductionStatus" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

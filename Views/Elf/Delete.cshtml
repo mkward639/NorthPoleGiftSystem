@@ -1,0 +1,51 @@
+@model NorthPoleGiftSystem.Models.Elf.ElfDetail
+
+@{
+    ViewData["Title"] = "Delete Elf";
+}
+
+<h1>Delete Elf</h1>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        Elf ID
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ElfID
+    </dd>
+
+    <dt class="col-sm-2">
+        Elf Name
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ElfName
+    </dd>
+
+    <dt class="col-sm-2">
+        Elf Role
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ElfRole
+    </dd>
+
+    <dt class="col-sm-2">
+        Workshop Name
+    </dt>
+    <dd class="col-sm-10">
+        @Model.WorkshopName
+    </dd>
+
+    <dt class="col-sm-2">
+        Last Updated
+    </dt>
+    <dd class="col-sm-10">
+        @Model.LastUpdated
+    </dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.ElfID">
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>

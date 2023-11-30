@@ -1,0 +1,46 @@
+@model List<NorthPoleGiftSystem.Models.WorkshopModel.WorkshopListItem>
+
+@{
+    ViewData["Title"] = "Workshops";
+}
+
+<h1>Workshops</h1>
+<hr />
+
+<p>
+    <a asp-action="Create">Create New Workshop</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Location
+            </th>
+            <th>
+                Workshop Capacity
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var workshop in Model)
+        {
+            <tr>
+                <td>
+                    @workshop.Location
+                </td>
+                <td>
+                    @workshop.WorkshopCapacity
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@workshop.WorkshopID">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@workshop.WorkshopID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@workshop.WorkshopID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

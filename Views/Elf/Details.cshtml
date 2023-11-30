@@ -1,0 +1,41 @@
+@model NorthPoleGiftSystem.Models.Elf.ElfDetail
+
+@{
+    ViewData["Title"] = Model.ElfName;
+}
+
+<h1>@Model.ElfName</h1>
+<h4>Elf Details</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.ElfID)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ElfID)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.ElfName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ElfName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.ElfRole)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.ElfRole)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.WorkshopName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.WorkshopName)
+    </dd>
+</dl>
+
+<div>
+    <a asp-controller="Elf" asp-action="Edit" asp-route-id="@Model.ElfID">Edit</a> |
+    <a asp-controller="Elf" asp-action="Index">Back To List</a>
+</div>

@@ -1,0 +1,42 @@
+@model NorthPoleGiftSystem.Models.WishlistModel.WishlistUpdate
+
+@{
+    ViewData["Title"] = "Edit Wishlist";
+}
+
+<h1>Edit Wishlist</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WishlistID" />
+
+            <div class="form-group">
+                <label asp-for="WishlistName" class="control-label"></label>
+                <input asp-for="WishlistName" class="form-control" />
+                <span asp-validation-for="WishlistName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ElfID" class="control-label"></label>
+                <input asp-for="ElfID" class="form-control" />
+                <span asp-validation-for="ElfID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

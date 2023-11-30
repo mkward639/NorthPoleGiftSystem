@@ -1,0 +1,39 @@
+@model NorthPoleGiftSystem.Models.Elf.ElfCreate
+
+@{
+    ViewData["Title"] = "Create Elf";
+}
+
+<h1>Create Elf</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ElfName"></label>
+        <input asp-for="ElfName" class="form-control" />
+        <span asp-validation-for="ElfName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ElfRole"></label>
+        <input asp-for="ElfRole" class="form-control" />
+        <span asp-validation-for="ElfRole" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WorkshopID"></label>
+        <input asp-for="WorkshopID" class="form-control" />
+        <span asp-validation-for="WorkshopID" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<br />
+
+@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

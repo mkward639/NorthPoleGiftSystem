@@ -1,0 +1,48 @@
+@model IEnumerable<NorthPoleGiftSystem.Models.Elf.ElfListItem>
+
+@{
+    ViewData["Title"] = "Elf Index";
+}
+
+<h1>Elf Index</h1>
+<p>
+    @Html.ActionLink("Create Elf", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ElfName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElfRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkshopName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ElfName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ElfRole)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkshopName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Elf", new { id = item.ElfID }) |
+                    @Html.ActionLink("Details", "Details", "Elf", new { id = item.ElfID }) |
+                    @Html.ActionLink("Delete", "Delete", "Elf", new { id = item.ElfID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

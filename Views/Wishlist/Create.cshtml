@@ -1,0 +1,27 @@
+@model NorthPoleGiftSystem.Models.WishlistModel.WishlistCreate
+
+@{
+    ViewData["Title"] = "Create Wishlist";
+}
+
+<h1>Create Wishlist</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="WishlistName" class="control-label"></label>
+        <input asp-for="WishlistName" class="form-control" />
+        <span asp-validation-for="WishlistName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ElfID" class="control-label"></label>
+        <input asp-for="ElfID" class="form-control" />
+        <span asp-validation-for="ElfID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
