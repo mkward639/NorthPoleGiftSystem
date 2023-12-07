@@ -4,6 +4,30 @@
     ViewData["Title"] = "Edit Workshop";
 }
 
+<style>
+    h1,
+    hr,
+    form,
+    label,
+    input,
+    span,
+    div,
+    a,
+    button {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <h1>Edit Workshop</h1>
 <hr />
 
@@ -30,7 +54,7 @@
         </form>
 
         <div>
-            <a asp-action="Details" asp-route-id="@Model.WorkshopID">Back to Details</a>
+            <a asp-action="Details" asp-route-id="@Model.WorkshopID" class="btn btn-default">Back to Details</a>
         </div>
     </div>
 </div>

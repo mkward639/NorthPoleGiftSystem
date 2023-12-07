@@ -53,7 +53,14 @@ namespace NorthPoleGiftSystem.Controllers
             {
                 return NotFound();
             }
-            return View(workshop);
+            WorkshopUpdate update = new()
+            {
+                WorkshopID = workshop.WorkshopID,
+                WorkshopCapacity = workshop.WorkshopCapacity,
+                Location = workshop.Location,
+            };
+
+            return View(update);
         }
 
         [HttpPost]

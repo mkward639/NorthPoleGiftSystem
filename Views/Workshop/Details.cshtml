@@ -4,6 +4,28 @@
     ViewData["Title"] = "Workshop Details";
 }
 
+<style>
+    h1,
+    hr,
+    dl,
+    dt,
+    dd,
+    div,
+    a {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-default {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-default:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <h1>Workshop Details</h1>
 <hr />
 
@@ -28,11 +50,16 @@
         </dt>
         <dd class="col-sm-10">
             @Model.SupervisorID
+        <dt class="col-sm-2">
+            Workshop ID
+        </dt>
+        <dd class="col-sm-10">
+                @Model.WorkshopID
         </dd>
     </dl>
 </div>
 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.WorkshopID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.WorkshopID" class="btn btn-default">Edit</a> |
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
 </div>

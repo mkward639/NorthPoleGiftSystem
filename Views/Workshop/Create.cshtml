@@ -4,6 +4,30 @@
     ViewData["Title"] = "Create Workshop";
 }
 
+<style>
+    h1,
+    hr,
+    form,
+    label,
+    input,
+    span,
+    div,
+    a,
+    button {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <h1>Create Workshop</h1>
 <hr />
 
@@ -26,11 +50,16 @@
                 <span asp-validation-for="SupervisorID" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="WorkshopID" class="control-label"></label>
+                <input asp-for="WorkshopID" class="form-control" />
+                <span asp-validation-for="WorkshopID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
         <div>
-            <a asp-action="Index">Back To List</a>
+            <a asp-action="Index" class="btn btn-default">Back To List</a>
         </div>
     </div>
 </div>

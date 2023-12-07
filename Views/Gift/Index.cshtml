@@ -1,34 +1,76 @@
 @model List<NorthPoleGiftSystem.Models.Gift.GiftListItem>
 
+@{
+    ViewData["Title"] = "Gifts";
+}
+<style>
+    body,
+    h2,
+    a,
+    th,
+    td {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    a {
+        color: red;
+    }
+
+    .table a {
+        color: white !important;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .white-text {
+        color: white !important;
+    }
+
+    .table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid white !important;
+        padding: 8px !important;
+    }
+
+    .table .link-cell {
+        white-space: nowrap;
+    }
+</style>
+
 <h2>Gifts</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create a New Gift</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="white-text">
                 @Html.DisplayNameFor(model => model.First().GiftName)
             </th>
-            <th>
+            <th class="white-text">
                 @Html.DisplayNameFor(model => model.First().ProductionStatus)
             </th>
-            <th></th>
+            <th class="white-text"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="white-text">
                     @Html.DisplayFor(modelItem => item.GiftName)
                 </td>
-                <td>
+                <td class="white-text">
                     @Html.DisplayFor(modelItem => item.ProductionStatus)
                 </td>
-                <td>
+                <td class="link-cell">
                     <a asp-action="Details" asp-route-id="@item.GiftID">Details</a> |
                     <a asp-action="Edit" asp-route-id="@item.GiftID">Edit</a> |
                     <a asp-action="Delete" asp-route-id="@item.GiftID">Delete</a>

@@ -5,6 +5,7 @@ using NorthPoleGiftSystem.NorthPole.Data;
 
 namespace NorthPoleGiftSystem.NorthPole.Data.Entities
 {
+    [Table("Elves")]
     public class ElfEntity
     {
         [Key]
@@ -19,6 +20,6 @@ namespace NorthPoleGiftSystem.NorthPole.Data.Entities
         public int WorkshopID { get; set; }
 
         [ForeignKey("WorkshopID")]
-        public virtual Workshop Workshop { get; set; }
+        public virtual WorkshopEntity Workshop { get; set; }
     }
 }

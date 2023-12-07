@@ -4,6 +4,25 @@
     ViewData["Title"] = "Create Elf";
 }
 
+<style>
+    body,
+    h1,
+    label,
+    span,
+    input,
+    button {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+</style>
+
 <h1>Create Elf</h1>
 
 <form asp-action="Create" method="post">
@@ -22,7 +41,13 @@
     <div class="form-group">
         <label asp-for="WorkshopID"></label>
         <input asp-for="WorkshopID" class="form-control" />
-        <span asp-validation-for="WorkshopID" class="text-danger"></span>
+        <span asp-validation-for="WorkshopID"  class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WorkshopName"></label>
+        <input asp-for="WorkshopName" class="form-control" />
+        <span asp-validation-for="WorkshopName"  class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

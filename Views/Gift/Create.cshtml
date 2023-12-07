@@ -1,5 +1,38 @@
 @model NorthPoleGiftSystem.Models.Gift.GiftCreate
 
+@{
+    ViewData["Title"] = "Create a New Gift";
+}
+
+<style>
+    h2,
+    form,
+    label,
+    input,
+    textarea,
+    span {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .text-danger {
+        color: red;
+    }
+</style>
+
 <h2>Create a New Gift</h2>
 
 <form asp-action="Create">

@@ -23,16 +23,6 @@ namespace NorthPoleGiftSystem.NorthPole.Data
         public DbSet<GiftEntity> Gifts { get; set; }
         public DbSet<WishlistEntity> Wishlists { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ElfEntity>()
-                .HasOne(e => e.Workshop)
-                .WithMany(w => w.Elves)
-                .HasForeignKey(e => e.WorkshopID)
-                .IsRequired();
-
-            base.OnModelCreating(modelBuilder);
-        }
 
     }
 }

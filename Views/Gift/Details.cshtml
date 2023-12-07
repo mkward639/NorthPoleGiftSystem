@@ -1,5 +1,42 @@
 @model NorthPoleGiftSystem.Models.Gift.GiftDetail
 
+@{
+    ViewData["Title"] = "Gift Details";
+}
+
+<style>
+    h2,
+    h4,
+    form,
+    label,
+    dl,
+    dt,
+    dd,
+    input,
+    a {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    .btn-default {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-default:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <h2>Gift Details</h2>
 
 <div>
@@ -43,7 +80,7 @@
     </dl>
 
     <p>
-        <a asp-action="Edit" asp-route-id="@Model.GiftID">Edit</a> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Edit" asp-route-id="@Model.GiftID" class="btn btn-default">Edit</a> |
+        <a asp-action="Index" class="btn btn-default">Back to List</a>
     </p>
 </div>

@@ -12,5 +12,8 @@ namespace NorthPoleGiftSystem.Models.WorkshopModel
 
         [Required(ErrorMessage = "SupervisorID is required")]
         public int SupervisorID { get; set; }
+
+        [Required(ErrorMessage = "WorkshopID is required")]
+        public int WorkshopID { get; set; }
     }
 }

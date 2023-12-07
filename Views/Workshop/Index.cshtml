@@ -4,6 +4,50 @@
     ViewData["Title"] = "Workshops";
 }
 
+<style>
+    body,
+    h1,
+    a,
+    th,
+    td {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+
+    a {
+        color: red;
+    }
+
+    .table a {
+        color: white !important;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .white-text {
+        color: white !important;
+    }
+
+    .table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid white !important;
+        padding: 8px !important;
+    }
+
+    .table .link-cell {
+        white-space: nowrap;
+    }
+
+    .table .link-cell a {
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+
 <h1>Workshops</h1>
 <hr />
 
@@ -14,13 +58,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="white-text">
                 Location
             </th>
-            <th>
+            <th class="white-text">
                 Workshop Capacity
             </th>
-            <th>
+            <th class="white-text">
                 Actions
             </th>
         </tr>
@@ -29,13 +73,13 @@
         @foreach (var workshop in Model)
         {
             <tr>
-                <td>
+                <td class="white-text">
                     @workshop.Location
                 </td>
-                <td>
+                <td class="white-text">
                     @workshop.WorkshopCapacity
                 </td>
-                <td>
+                <td class="link-cell">
                     <a asp-action="Details" asp-route-id="@workshop.WorkshopID">Details</a> |
                     <a asp-action="Edit" asp-route-id="@workshop.WorkshopID">Edit</a> |
                     <a asp-action="Delete" asp-route-id="@workshop.WorkshopID">Delete</a>

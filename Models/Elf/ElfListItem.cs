@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NorthPoleGiftSystem.NorthPole.Data;
 using System.ComponentModel.DataAnnotations;
+using NorthPoleGiftSystem.NorthPole.Data.Entities;
 
 namespace NorthPoleGiftSystem.Models.Elf
 {
@@ -16,7 +17,7 @@ namespace NorthPoleGiftSystem.Models.Elf
 
         public ElfListItem() { }
 
-        public ElfListItem(NorthPoleGiftSystem.NorthPole.Data.Elf elf)
+        public ElfListItem(ElfEntity elf)
         {
             ElfID = elf.ElfID;
             ElfName = elf.ElfName;

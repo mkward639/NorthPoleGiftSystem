@@ -53,7 +53,13 @@ namespace NorthPoleGiftSystem.Controllers
             {
                 return NotFound();
             }
-            return View(wishlist);
+            WishlistUpdate update = new()
+            {
+                WishlistID = wishlist.WishlistID,
+                WishlistName = wishlist.WishlistName,
+                ElfID = wishlist.ElfID,
+            };
+            return View(update);
         }
 
         [HttpPost]

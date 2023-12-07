@@ -13,7 +13,7 @@ namespace NorthPoleGiftSystem.NorthPole.Data.Entities
         [Required(ErrorMessage = "Elf ID is required")]
         public int ElfID { get; set; }
 
-        public Elf Elf { get; set; }
+        public ElfEntity Elf { get; set; }
         public DateTime LastUpdated { get; set; }
     }
 }

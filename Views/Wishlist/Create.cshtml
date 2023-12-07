@@ -4,6 +4,29 @@
     ViewData["Title"] = "Create Wishlist";
 }
 
+<style>
+    h1,
+    form,
+    label,
+    input,
+    span,
+    div,
+    a,
+    button {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <h1>Create Wishlist</h1>
 
 <form asp-action="Create">
@@ -23,5 +46,5 @@
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
 </div>

@@ -9,7 +9,7 @@ using NorthPoleGiftSystem.NorthPoleServices;
 
 namespace NorthPoleGiftSystem.Services
 {
-    public class ElfService
+    public class ElfService : IElfService
     {
         private readonly NorthPoleDbContext _dbContext;
 
@@ -43,6 +43,7 @@ namespace NorthPoleGiftSystem.Services
                     ElfID = e.ElfID,
                     ElfName = e.ElfName,
                     ElfRole = e.ElfRole,
+                    WorkshopID = e.WorkshopID,
                     WorkshopName = e.Workshop != null ? e.Workshop.Location : null,
                     WorkshopLocation = e.Workshop != null ? e.Workshop.Location : null,
                     LastUpdated = DateTime.UtcNow,

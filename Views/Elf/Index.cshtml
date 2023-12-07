@@ -3,22 +3,65 @@
 @{
     ViewData["Title"] = "Elf Index";
 }
+<style>
+    body,
+    h1,
+    a,
+    th,
+    td {
+        font-family: 'Comic Sans MS', sans-serif;
+    }
 
-<h1>Elf Index</h1>
+    a {
+        color: red;
+    }
+
+    .table a {
+        color: white !important;
+        display: block;
+        padding: 5px 0;
+    }
+
+    .white-text {
+        color: white !important;
+    }
+
+    .table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid white !important;
+        padding: 8px !important;
+    }
+
+    .table .link-cell {
+        white-space: nowrap;
+    }
+
+    .table .link-cell a {
+        display: inline-block;
+        margin-right: 10px;
+    }
+</style>
+
+<h1>Elves</h1>
 <p>
-    @Html.ActionLink("Create Elf", "Create")
+    @Html.ActionLink("Create an Elf", "Create")
 </p>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="white-text">
                 @Html.DisplayNameFor(model => model.ElfName)
             </th>
-            <th>
+            <th class="white-text">
                 @Html.DisplayNameFor(model => model.ElfRole)
             </th>
-            <th>
+            <th class="white-text">
                 @Html.DisplayNameFor(model => model.WorkshopName)
             </th>
             <th></th>
@@ -28,16 +71,16 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="white-text">
                     @Html.DisplayFor(modelItem => item.ElfName)
                 </td>
-                <td>
+                <td class="white-text">
                     @Html.DisplayFor(modelItem => item.ElfRole)
                 </td>
-                <td>
+                <td class="white-text">
                     @Html.DisplayFor(modelItem => item.WorkshopName)
                 </td>
-                <td>
+                <td class="link-cell">
                     @Html.ActionLink("Edit", "Edit", "Elf", new { id = item.ElfID }) |
                     @Html.ActionLink("Details", "Details", "Elf", new { id = item.ElfID }) |
                     @Html.ActionLink("Delete", "Delete", "Elf", new { id = item.ElfID })

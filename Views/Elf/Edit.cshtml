@@ -5,6 +5,31 @@
     ViewData["Title"] = title;
 }
 
+<style>
+    h1,
+    label,
+    input,
+    .text-danger,
+    .btn,
+    a {
+        font-family: 'Comic Sans MS', sans-serif;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    a {
+        color: red;
+    }
+</style>
+
 <h1>@title</h1>
 <hr />
 
@@ -12,8 +37,8 @@
     <div class="col-md-4">
         <form asp-action="Edit" method="post">
             <div class="form-group">
-                @Html.DisplayNameFor(e => e.ElfID)
-                @Html.DisplayFor(e => e.ElfID)
+                <label asp-for="ElfID" class="control-label"></label>
+                <input asp-for="ElfID" hidden />
             </div>
             <div class="form-group">
                 <label asp-for="ElfName" class="control-label"></label>

@@ -16,5 +16,8 @@ namespace NorthPoleGiftSystem.Models.Elf
 
         [Required(ErrorMessage = "WorkshopID is required")]
         public int WorkshopID { get; set; }
+
+        [Required(ErrorMessage = "WorkshopName is required")]
+        public string WorkshopName { get; set; }
     }
 }

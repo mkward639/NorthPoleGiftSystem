@@ -21,7 +21,7 @@ namespace NorthPoleGiftSystem.Controllers
             return View(elves);
         }
 
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
             var elf = _elfService.GetElfById(id);
 
@@ -51,7 +51,7 @@ namespace NorthPoleGiftSystem.Controllers
             return View(model);
         }
 
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
             var elf = _elfService.GetElfById(id);
 
@@ -59,20 +59,27 @@ namespace NorthPoleGiftSystem.Controllers
             {
                 return NotFound();
             }
+            ElfUpdate update = new()
+            {
+                ElfID = elf.ElfID,
+                ElfName = elf.ElfName,
+                ElfRole = elf.ElfRole,
+                WorkshopID = elf.WorkshopID,
+            };
 
-            return View(elf);
+            return View(update);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, ElfUpdate model)
+        public async Task<IActionResult> Edit(ElfUpdate model)
         {
-            if (id != model.ElfID)
-            {
-                return NotFound();
-            }
+            // if (id != model.ElfID)
+            // {
+            //     return NotFound();
+            // }
 
-            if (ModelState.IsValid)
+            // if (ModelState.IsValid)
             {
                 var success = await _elfService.UpdateElfAsync(model);
 
